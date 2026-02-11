@@ -41,14 +41,8 @@
 *.dwo
 
 # Documentation folder
-/doc/*
+doc
 
 # Custom folders and files
-_deps/
-CPM_modules/
-CMakeCache.txt
-cmake_install.cmake
-CPackConfig.cmake
-CPackSourceConfig.cmake
-cpm-package-lock.cmake
-vyos_policy_studio
+_deps
+out
