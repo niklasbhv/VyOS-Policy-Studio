@@ -79,11 +79,11 @@ struct RemoteGroup {
 };
 
 struct Group {
-    std::map<std::string, AddressGroup> adress_groups;
+    std::map<std::string, AddressGroup> address_groups;
     std::map<std::string, DomainGroup> domain_groups;
     std::map<std::string, DynamicGroup> dynamic_groups;
     std::map<std::string, InterfaceGroup> interface_groups;
-    std::map<std::string, Ipv6AddressGroup> ipv6_adress_groups;
+    std::map<std::string, Ipv6AddressGroup> ipv6_address_groups;
     std::map<std::string, Ipv6NetworkGroup> ipv6_network_groups;
     std::map<std::string, MacGroup> mac_groups;
     std::map<std::string, NetworkGroup> network_groups;
