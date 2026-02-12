@@ -192,43 +192,63 @@ Group ParseGroup(json& group_json) {
     Group group;
 
     if (group_json.contains("address-group")) {
-
+        for (auto& address_group : group_json.at("address-group").items()) {
+            group.address_groups[address_group.key()] = ParseAddressGroup(address_group.value());
+        }
     }
 
     if (group_json.contains("domain-group")) {
-
+        for (auto& domain_group : group_json.at("domain-group").items()) {
+            group.domain_groups[domain_group.key()] = ParseDomainGroup(domain_group.value());
+        }
     }
 
     if (group_json.contains("dynamic-group")) {
-
+        for (auto& dynamic_group : group_json.at("dynamic-group").items()) {
+            group.dynamic_groups[dynamic_group.key()] = ParseDynamicGroup(dynamic_group.value());
+        }
     }
 
     if (group_json.contains("interface-group")) {
-
+        for (auto& interface_group : group_json.at("interface-group").items()) {
+            group.interface_groups[interface_group.key()] = ParseInterfaceGroup(interface_group.value());
+        }
     }
 
     if (group_json.contains("ipv6-address-group")) {
-
+        for (auto& ipv6_address_group : group_json.at("ipv6-address-group").items()) {
+            group.ipv6_address_groups[ipv6_address_group.key()] = ParseIpv6AddressGroup(ipv6_address_group.value());
+        }
     }
 
     if (group_json.contains("ipv6-network-group")) {
-
+        for (auto& ipv6_network_group : group_json.at("ipv6-network-group").items()) {
+            group.ipv6_network_groups[ipv6_network_group.key()] = ParseIpv6NetworkGroup(ipv6_network_group.value());
+        }
     }
 
     if (group_json.contains("mac-group")) {
-
+        for (auto& mac_group : group_json.at("mac-group").items()) {
+            group.mac_groups[mac_group.key()] = ParseMacGroup(mac_group.value());
+        }
     }
 
     if (group_json.contains("network-group")) {
-
+        for (auto& network_group : group_json.at("network-group").items()) {
+            group.network_groups[network_group.key()] = ParseNetworkGroup(network_group.value());
+        }
     }
 
     if (group_json.contains("port-group")) {
-
+        for (auto& port_group : group_json.at("port-group").items()) {
+            group.port_groups[port_group.key()] = ParsePortGroup(port_group.value());
+        }
     }
 
     if (group_json.contains("remote-group")) {
-
+        for (auto& remote_group : group_json.at("remote-group").items()) {
+            group.remote_groups[remote_group.key()] = ParseRemoteGroup(remote_group.value());
+        }
     }
 
     return group;
