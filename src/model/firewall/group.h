@@ -19,7 +19,6 @@
 #include <memory>
 #include <string>
 #include <variant>
-#include <optional>
 
 #include "../types.h"
 
@@ -80,16 +79,16 @@ struct RemoteGroup {
 };
 
 struct Group {
-    std::optional<std::map<std::string, AddressGroup>> adress_groups;
-    std::optional<std::map<std::string, DomainGroup>> domain_groups;
-    std::optional<std::map<std::string, DynamicGroup>> dynamic_groups;
-    std::optional<std::map<std::string, InterfaceGroup>> interface_groups;
-    std::optional<std::map<std::string, Ipv6AddressGroup>> ipv6_adress_groups;
-    std::optional<std::map<std::string, Ipv6NetworkGroup>> ipv6_network_groups;
-    std::optional<std::map<std::string, MacGroup>> mac_groups;
-    std::optional<std::map<std::string, NetworkGroup>> network_groups;
-    std::optional<std::map<std::string, PortGroup>> port_groups;
-    std::optional<std::map<std::string, RemoteGroup>> remote_groups;
+    std::map<std::string, AddressGroup> adress_groups;
+    std::map<std::string, DomainGroup> domain_groups;
+    std::map<std::string, DynamicGroup> dynamic_groups;
+    std::map<std::string, InterfaceGroup> interface_groups;
+    std::map<std::string, Ipv6AddressGroup> ipv6_adress_groups;
+    std::map<std::string, Ipv6NetworkGroup> ipv6_network_groups;
+    std::map<std::string, MacGroup> mac_groups;
+    std::map<std::string, NetworkGroup> network_groups;
+    std::map<std::string, PortGroup> port_groups;
+    std::map<std::string, RemoteGroup> remote_groups;
 };
 
 } // namespace firewall
