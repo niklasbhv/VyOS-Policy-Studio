@@ -45,4 +45,4 @@ doc
 
 # Custom folders and files
 _deps
-out
+build

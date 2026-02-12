@@ -1,10 +1,10 @@
 compile:
-	cmake -S ./ -B ./out && cmake --build ./out
+	cmake -S ./ -B ./build && cmake --build ./build
 
 clean:
 	rm -rf ./_deps
 	rm -rf ./doc
-	rm -rf ./out
+	rm -rf ./build
 
 documentation:
 	doxygen Doxyfile
