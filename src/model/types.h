@@ -14,9 +14,10 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+#include <array>
 #include <variant>
 
-typedef uint8_t Ipv6Address[16];
+typedef std::array<uint8_t, 16> Ipv6Address;
 
 struct Ipv6Network {
     Ipv6Address subnet;
@@ -28,7 +29,7 @@ struct Ipv6AddressRange {
     Ipv6Address last_address;
 };
 
-typedef uint8_t Ipv4Address[4];
+typedef std::array<uint8_t, 4>  Ipv4Address;
 
 struct Ipv4Network {
     Ipv4Address subnet;
@@ -40,7 +41,7 @@ struct Ipv4AddressRange {
     Ipv4Address last_address;
 };
 
-typedef uint8_t MacAddress[6];
+typedef std::array<uint8_t, 6> MacAddress;
 
 struct PortRange {
     uint16_t first_port;
