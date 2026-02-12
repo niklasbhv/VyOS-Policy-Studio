@@ -18,6 +18,7 @@
 #include <list>
 #include <memory>
 #include <string>
+#include <variant>
 #include <optional>
 
 #include "../types.h"
@@ -25,15 +26,12 @@
 namespace firewall {
 
 struct AddressGroup {
-    std::string name;
     std::string description;
     std::list<std::shared_ptr<AddressGroup>> includes;
-    std::list<Ipv4Address> ipv4_addresses;
-    std::list<Ipv4AddressRange> ipv4_address_ranges;
+    std::list<std::variant<Ipv4Address,Ipv4AddressRange>> ipv4_addresses;
 };
 
 struct DomainGroup {
-    std::string name;
     std::string description;
     std::list<std::string> addresses;
 };
@@ -41,50 +39,42 @@ struct DomainGroup {
 struct DynamicGroup {};
 
 struct InterfaceGroup {
-    std::string name;
     std::string description;
     std::list<std::shared_ptr<InterfaceGroup>> includes;
     std::list<std::string> interfaces;
 };
 
 struct Ipv6AddressGroup {
-    std::string name;
     std::string description;
     std::list<std::shared_ptr<Ipv6AddressGroup>> includes;
-    std::list<Ipv6Address> ipv6_addresses;
-    std::list<Ipv6AddressRange> ipv6_address_ranges;
+    std::list<std::variant<Ipv6Address, Ipv6AddressRange>> ipv6_addresses;
 };
 
 struct Ipv6NetworkGroup {
-    std::string name;
     std::string description;
     std::list<std::shared_ptr<Ipv6NetworkGroup>> includes;
     std::list<Ipv6Network> networks;
 };
 
 struct MacGroup {
-    std::string name;
     std::string description;
     std::list<std::shared_ptr<MacGroup>> includes;
     std::list<MacAddress> mac_addresses;
 };
 
 struct NetworkGroup {
-    std::string name;
     std::string description;
     std::list<std::shared_ptr<NetworkGroup>> includes;
     std::list<Ipv4Network> networks;
 };
 
 struct PortGroup {
-    std::string name;
     std::string description;
     std::list<std::shared_ptr<PortGroup>> includes;
     std::list<Port> ports;
 };
 
 struct RemoteGroup {
-    std::string name;
     std::string description;
     std::string url;
 };
