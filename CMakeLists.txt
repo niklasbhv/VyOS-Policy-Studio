@@ -3,8 +3,13 @@ project(vyos_policy_studio)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(vyos_policy_studio src/main.cpp
-        src/main.h)
+add_executable(vyos_policy_studio 
+        src/main.cpp
+        src/main.h
+        # VyOS Firewall Model
+        src/model/types.h
+        src/model/firewall/group.cpp
+        src/model/firewall/group.h)
 
 # add dependencies
 include(cmake/CPM.cmake)
