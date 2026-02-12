@@ -11,10 +11,8 @@ add_executable(vyos_policy_studio
         src/model/firewall/group.cpp
         src/model/firewall/group.h)
 
-# add dependencies
+# Add dependencies
 include(cmake/CPM.cmake)
-
-
-CPMAddPackage("gh:nlohmann/json@3.11.3")
+CPMAddPackage("gh:nlohmann/json@3.12.0")
 
 target_link_libraries(vyos_policy_studio nlohmann_json::nlohmann_json)
