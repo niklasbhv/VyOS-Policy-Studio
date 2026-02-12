@@ -48,7 +48,7 @@ DomainGroup ParseDomainGroup(json& domain_group_json) {
     }
 
     if (domain_group_json.contains("address")) {
-        // List of domain names
+        domain_group_json.at("address").get_to(domain_group.addresses);
     }
 
     return domain_group;
@@ -182,7 +182,7 @@ RemoteGroup ParseRemoteGroup(json& remote_group_json) {
     }
 
     if (remote_group_json.contains("url")) {
-        // List if URLs
+        remote_group_json.at("url").get_to(remote_group.url);
     }
 
     return remote_group;
