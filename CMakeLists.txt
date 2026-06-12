@@ -1,18 +1,24 @@
 cmake_minimum_required(VERSION 3.22.1)
 project(vyos_policy_studio)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(vyos_policy_studio 
-        src/main.cpp
-        src/main.h
-        # VyOS Firewall Model
-        src/model/types.h
-        src/model/firewall/group.cpp
-        src/model/firewall/group.h)
+find_package(Qt6 REQUIRED COMPONENTS Widgets)
 
-# Add dependencies
-include(cmake/CPM.cmake)
-CPMAddPackage("gh:nlohmann/json@3.12.0")
+qt_standard_project_setup()
 
-target_link_libraries(vyos_policy_studio nlohmann_json::nlohmann_json)
+set(CMAKE_AUTOUIC_SEARCH_PATHS
+    ${CMAKE_CURRENT_SOURCE_DIR}/ui
+)
+
+qt_add_executable(${PROJECT_NAME}
+        src/app/main.cpp
+        src/app/main.h
+        src/app/MainWindow.cpp
+        src/app/MainWindow.h
+)
+
+add_subdirectory(src/vyos)
+
+target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Widgets)
