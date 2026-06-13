@@ -8,8 +8,18 @@ add_library(${PROJECT_NAME}
         #model/firewall/common.h
         #model/firewall/firewall.cpp
         #model/firewall/firewall.h
+        #model/firewall/flowtable.cpp
+        #model/firewall/flowtable.h
+        #model/firewall/global-options.cpp
+        #model/firewall/global-options.h
         model/firewall/group.cpp
         model/firewall/group.h
+        #model/firewall/ipv4.cpp
+        #model/firewall/ipv4.h
+        #model/firewall/ipv6.cpp
+        #model/firewall/ipv6.h
+        #model/firewall/zone.cpp
+        model/firewall/zone.h
 )
 
 # add dependencies

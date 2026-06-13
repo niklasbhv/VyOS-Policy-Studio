@@ -12,13 +12,5 @@ set(CMAKE_AUTOUIC_SEARCH_PATHS
     ${CMAKE_CURRENT_SOURCE_DIR}/ui
 )
 
-qt_add_executable(${PROJECT_NAME}
-        src/app/main.cpp
-        src/app/main.h
-        src/app/MainWindow.cpp
-        src/app/MainWindow.h
-)
-
+add_subdirectory(src/app)
 add_subdirectory(src/vyos)
-
-target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Widgets)
